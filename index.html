@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task manager for browser</title>
+    <link rel="icon" type="image/png" href="ed-dev-favicon-2.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="main-title">Task manager</h1>
+    <div class="drag-container">
+      <ul class="drag-list">
+        <!-- To do column -->
+        <li class="drag-column toDo-column">
+          <span class="header">
+            <h1>To do</h1>
+          </span>
+          <!-- toDo content -->
+          <div id="toDo-content" class="custom-scroll">
+            <ul
+              class="drag-task-list"
+              id="toDo-list"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              ondragenter="dragEnter(0)"
+            ></ul>
+          </div>
+          <!-- Add button group -->
+          <div class="add-btn-group">
+            <div class="add-btn" onclick="showInputBox(0)">
+              <span class="plus-sign">+</span>
+              <span>Add task</span>
+            </div>
+            <div class="add-btn solid" onclick="hideInputBox(0)">
+              <span>Save task</span>
+            </div>
+          </div>
+          <div class="add-container">
+            <div class="add-task" contenteditable="true"></div>
+          </div>
+        </li>
+        <!-- In progress column -->
+        <li class="drag-column inProgress-column">
+          <span class="header">
+            <h1>In progress</h1>
+          </span>
+          <!-- In progress content -->
+          <div id="inProgress-content" class="custom-scroll">
+            <ul
+              class="drag-task-list"
+              id="inProgress-list"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              ondragenter="dragEnter(1)"
+            ></ul>
+          </div>
+          <!-- Add button group -->
+          <div class="add-btn-group">
+            <div class="add-btn" onclick="showInputBox(1)">
+              <span class="plus-sign">+</span>
+              <span>Add task</span>
+            </div>
+            <div class="add-btn solid" onclick="hideInputBox(1)">
+              <span>Save task</span>
+            </div>
+          </div>
+          <div class="add-container">
+            <div class="add-task" contenteditable="true"></div>
+          </div>
+        </li>
+        <!-- Completed column -->
+        <li class="drag-column completed-column">
+          <span class="header">
+            <h1>Completed</h1>
+          </span>
+          <!-- Completed content -->
+          <div id="completed-content" class="custom-scroll">
+            <ul
+              class="drag-task-list"
+              id="completed-list"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              ondragenter="dragEnter(2)"
+            ></ul>
+          </div>
+          <!-- Add button group -->
+          <div class="add-btn-group">
+            <div class="add-btn" onclick="showInputBox(2)">
+              <span class="plus-sign">+</span>
+              <span>Add task</span>
+            </div>
+            <div class="add-btn solid" onclick="hideInputBox(2)">
+              <span>Save task</span>
+            </div>
+          </div>
+          <div class="add-container">
+            <div class="add-task" contenteditable="true"></div>
+          </div>
+        </li>
+        <!-- On hold column -->
+        <li class="drag-column on-hold-column">
+          <span class="header">
+            <h1>On hold</h1>
+          </span>
+          <!-- On hold content -->
+          <div id="on-hold-content" class="custom-scroll">
+            <ul
+              class="drag-task-list"
+              id="on-hold-list"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              ondragenter="dragEnter(3)"
+            ></ul>
+          </div>
+          <!-- Add button group -->
+          <div class="add-btn-group">
+            <div class="add-btn" onclick="showInputBox(3)">
+              <span class="plus-sign">+</span>
+              <span>Add task</span>
+            </div>
+            <div class="add-btn solid" onclick="hideInputBox(3)">
+              <span>Save task</span>
+            </div>
+          </div>
+          <div class="add-container">
+            <div class="add-task" contenteditable="true"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
